@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <meta charset ="UTF-8">
+        <meta http-equiv="x-UA-Comaptible" content="IE=edge">
+        <meta name="viewpoint" content="width=device-width, inital-scale=1.0">
+        <title>Doc</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/4e829ab01c.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id ="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact me</h1>
+                        <p><i class="fa-solid fa-paper-plane"></i>hirunika99m@gmail.com</p>
+                        <p><i class="fa-solid fa-phone"></i>0777256210</p>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/_hiru_m?igsh=dHkyengwZ3ZrODk4&utm_source=qr"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="www.linkedin.com/in/hirunika-samarakoon-835689218"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/Hiru-M"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                        <a href="Hirunika's Resume.pdf" download class name="btn btn2">Download CV</a>
+                    </div>
+                    <div class="contact-right">
+                        <form name="'submit-to-google-sheet'">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn.btn2">submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright @ Hirunika</p>
+            </div>
+        </div>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyK7C2PgkqQmivNVb9QB7MQygsS_jIH--ztzjghPK8bpylQlIqTlyKi-OqraVpweDkJ/exec'
+            const form = document.forms['submit-to-google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+        </body>
+        </html>
